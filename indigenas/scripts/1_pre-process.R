@@ -128,7 +128,7 @@ mapa_regiones <- chilemapas::mapa_comunas %>%
 
 
 # --- 4. Mapa de regiones ---
-mapa_regiones <- chilemapas::mapa_regiones %>%
+mapa_regiones <- mapa_regiones %>%
   select(codigo_region, geometry) %>%
   st_as_sf()
 
@@ -149,11 +149,13 @@ g1 <- ggplot(pob_mapa) +
   ) +
   theme_minimal() +
   labs(
-    title = "Proporción de población indígena por región",
-    caption = "Fuente: Censo y Base de Pueblos Indígenas"
+    title = "% Indígena por región",
+    caption = "Fuente: CENSO 2024"
   )
 
 g1
+
+ggsave(g1, )
 
 # POB MAPA - MAPA DATOS
 
